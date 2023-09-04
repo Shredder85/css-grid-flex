@@ -1,0 +1,26 @@
+/*
+ * Shared settings for all the grid classes.
+ */
+
+.grid { display: grid; gap: 1rem }
+.grid > div { padding: 0.5rem 1rem; background-color: aliceblue }
+
+/*
+ * This grid is set to three columns with an even width.
+ */
+
+.grid-even { grid-template-columns: 1fr 1fr 1fr }
+
+/*
+ * This grid has three columns that respond to the size of its content.
+ */
+
+.grid-content, .grid-responsive { grid-template-columns: repeat(3,minmax(min-content,auto)) }
+
+/*
+ * This media query make the grid responsive by changing from columns to rows for screens < 768px.
+ */
+
+@media (max-width: 767px) {
+   .grid-responsive { grid-template-columns: none; grid-auto-rows: auto }
+}

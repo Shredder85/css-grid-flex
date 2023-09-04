@@ -1,0 +1,32 @@
+/*
+ * Shared flexbox settings.
+ */
+
+.flex { display: flex; gap: 1rem }
+.flex > div { padding: 0.5rem 1rem; background-color: aliceblue }
+
+/*
+ * NOTE: In the classes below, I'm writing each attribute separately to make it more clear what's going on.
+ * You can use the `flex` shorthand with the syntax `flex: [grow] [shrink] [basis]`.
+ */
+
+/*
+ * Since we're working with flexboxes, we use the > selector to select all div elements that are
+ * direct children of the container (aka "cells") to apply the same behaviour to all of them.
+ */
+
+.flex-default > div, .flex-responsive > div { flex-grow: 0; flex-shrink: 1; flex-basis: auto }
+
+/*
+ * This flex mimic the behaviour of our first grid, with evenly distributed column sizes.
+ */
+
+.flex-even > div { flex-grow: 1; flex-shrink: 0; flex-basis: 0 }
+
+/*
+ * To make this flexbox responsive, we change the flex-direction for smaller screens.
+ */
+
+@media (max-width: 767px) {
+   .flex-responsive { flex-direction: column }
+}

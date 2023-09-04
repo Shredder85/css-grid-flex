@@ -1,0 +1,42 @@
+/*
+ * To get full control over the design, I prefer to remove margins and padding from ALL elements.
+ * I also set the `box-sizing` so that any added padding doesn't extend an element beyond it's defined height.
+ */
+
+* { margin: 0; padding: 0; box-sizing: border-box }
+
+/*
+ * Define the width and height of the root elements to cover the 'small viewport'.
+ * This way, we can use percentages for child elements and their dimensions will be viewport-based.
+ */
+
+html, body { width: 100svw; height: 100svh }
+
+/*
+ * Define font settings just for the look-and-feel. It has no relevance to the topic discussed here.
+ */
+
+body { font-family: sans-serif; font-size: 1rem; line-height: 1.4rem }
+
+/*
+ * This is the main content area. We use the min() function to set the width to 1024px on larger screens
+ * and '100% of small viewport width' on screens smaller than 1024px. We set an x-margin to 'auto' to make
+ * the content panel horizontally centered.
+ */
+
+main { width: min(1024px,100svw); height: fit-content; min-height: 100%;
+       margin: 0 auto; padding: 1.75rem 3rem; background-color: antiquewhite }
+
+/*
+ * Various headline styles.
+ */
+
+h1 { padding: 1rem 0; font-size: 150%; color: darkcyan }
+h2 { padding: 0.5rem 0 2rem 0; font-size: min(120%,3.7svw); color: darkgoldenrod }
+
+/*
+ * Basic styles and margins for the list and its items.
+ */
+
+ul { list-style: none }
+ul li { margin: 2rem 0 }
